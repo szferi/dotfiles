@@ -1,20 +1,22 @@
 #!/bin/sh
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
+rm -f $HOME/.zshrc
+ln -sv $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-rm -rf $HOME/.gitconfig
-ln -sw $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+rm -f $HOME/.gitconfig
+ln -sv $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
 # Add starship config
 if [ ! -d $HOME/.config/ ]; then
     mkdir $HOME/.config/
 fi
-ln -sw $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
+rm -f $HOME/.config/starship.toml
+ln -sv $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
 
 # Add starship config
 if [ ! -d $HOME/.config/direnv ]; then
     mkdir $HOME/.config/direnv
 fi
-ln -sw $HOME/.dotfiles/direnv.toml $HOME/.config/direnv/direnv.toml
+rm -f $HOME/.config/direnv/direnv.toml
+ln -sv $HOME/.dotfiles/direnv.toml $HOME/.config/direnv/direnv.toml
