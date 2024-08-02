@@ -18,5 +18,11 @@ ln -sv $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
 if [ ! -d $HOME/.config/direnv ]; then
     mkdir $HOME/.config/direnv
 fi
+
 rm -f $HOME/.config/direnv/direnv.toml
 ln -sv $HOME/.dotfiles/direnv.toml $HOME/.config/direnv/direnv.toml
+
+# Doppler needs this
+if [ ! -d $HOME/.doppler ]; then
+    mkdir $HOME/.doppler
+fi
