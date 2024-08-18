@@ -10,10 +10,15 @@ eval "$(direnv hook zsh)"
 # Starship Prompt
 eval "$(starship init zsh)"
 
-# Exa
-if [ -f /usr/bin/exa ]; then
-alias ls="exa --long --git --header --modified --group --all --sort=name --group-directories-first"
+# Exa / Eza
+if [ -f '/usr/bin/exa' ]; then
+EXA=exa
 fi
+if [ -f '/usr/bin/eza' ]; then
+EXA=eza
+fi
+
+alias ls="$EXA --long --git --header --modified --group --all --sort=name --group-directories-first"
 
 # GCloud
 # The next line updates PATH for the Google Cloud SDK.
