@@ -43,3 +43,8 @@ gcs() {
     name=$(gcloud config configurations list --format='get(name)' | fzf --no-multi --ansi --header="GCloud Config") || return
     gcloud config configurations activate $name
 }
+
+# git setup in devcontainer
+if [ -d "/home/devuser/app" ];
+git config --global --add safe.directory /home/devuser/app
+fi
