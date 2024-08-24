@@ -11,10 +11,10 @@ eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 # Exa / Eza
-if [ -f '/usr/bin/exa' ]; then
+if [ -x "/usr/bin/exa" ]; then
 EXA=exa
 fi
-if [ -f '/usr/bin/eza' ]; then
+if [ -x "/usr/bin/eza" ]; then
 EXA=eza
 fi
 
@@ -45,6 +45,6 @@ gcs() {
 }
 
 # git setup in devcontainer
-if [ -d "/home/devuser/app" ];
-git config --global --add safe.directory /home/devuser/app
+if [ -d "/home/devuser/app" ]; then
+    git config --global --add safe.directory /home/devuser/app
 fi
