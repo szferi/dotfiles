@@ -11,9 +11,7 @@ eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 # Exa / Eza
-if [ -x "/usr/bin/exa" ]; then
 EXA=exa
-fi
 if [ -x "/usr/bin/eza" ]; then
 EXA=eza
 fi
