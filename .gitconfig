@@ -7,3 +7,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[credential]
+	helper = "!f() { /home/devuser/.vscode-server/bin/bdd88df003631aaa0bcbe057cb0a940b80a476fa/node /tmp/vscode-remote-containers-3c9f52a7-74fb-4ffc-b083-827d48e6fa56.js git-credential-helper $*; }; f"
+[safe]
+	directory = /home/devuser/app
+	directory = /home/devuser/app
