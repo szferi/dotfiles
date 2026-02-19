@@ -46,3 +46,10 @@ gcs() {
 if [ -d "/home/devuser/app" ]; then
     git config --global --add safe.directory /home/devuser/app
 fi
+
+# fnm
+FNM_PATH="/home/szferi/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
